@@ -36,3 +36,7 @@ Route::get('/biodata', function () {
 Route::get('/hobi', function () {
     return view('kidam/hobi');
 });
+
+Route::get('/index', function () {
+    return view('kidam/index');
+});
