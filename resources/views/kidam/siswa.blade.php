@@ -6,7 +6,7 @@
        body {
            background-color: skyblue;
        }
-   </style> 
+   </style>
    </head>
    <body>
       <table>

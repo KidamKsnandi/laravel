@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\If_;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +42,35 @@ Route::get('/hobi', function () {
 Route::get('/index', function () {
     return view('kidam/index');
 });
+
+Route::get('page/{page?}', function ($hal = 2) {
+    return "Halaman <b>$hal</b>";
+});
+
+Route::get('user/{name?}', function ($nama = "Hello World") {
+    return "<b>$nama</b>";
+});
+
+Route::get('pesan/{pesan?}/{makanan?}/{minuman?}/{cemilan?}', function ($makanan = "",$minuman = "",$cemilan = "") {
+    if ($makanan == "" && $minuman == "" && $cemilan == "") {
+        $output = "Anda Tidak Memesan, Silahkan Pulang";
+    }
+            if ($makanan != "" ) {
+            $output = "Anda Pesan Makan : $makanan <br>";
+        }
+        if ($makanan != "" && $minuman != "" ) {
+            $output = "Anda Pesan Makan : $makanan<br>"
+            . "Minum : $minuman <br>";
+        }
+
+        if ($makanan != "" && $minuman != "" && $cemilan != "") {
+            $output = "Anda Pesan Makan : $makanan<br>"
+            . "Minum : $minuman <br>"
+            . "Cemilan : $cemilan";
+}
+
+    return "$output";
+});
+
+
+

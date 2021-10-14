@@ -11,8 +11,8 @@
         <p><b>Hi,Kami adalah sebuah developer tyang berdomisili di Jakarta. Saat ini sedang belajar HTML di Petani kode</b></p>
         <table border=1>
            <tr>
-              <th>Skill</th>
-              <th>Pengalaman</th>
+              <th width="200px" >Skill</td>
+              <th width="300px">Pengalaman</th>
             </tr>
             <tr>
                 <td>
@@ -31,8 +31,10 @@
                     </td>
             </tr>
         </table>
+        <br>
         <hr>
         Copyright Kidam Kusnandi
+        <hr>
     </center>
    </body>
 </html>
