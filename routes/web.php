@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Nette\Iterators\Mapper;
 use PhpParser\Node\Stmt\If_;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
@@ -72,5 +73,72 @@ Route::get('pesan/{pesan?}/{makanan?}/{minuman?}/{cemilan?}', function ($makanan
     return "$output";
 });
 
+Route::get('profile', function () {
+    $nama = "Kidam";
+    return view('profile', compact('nama'));
+});
 
+Route::get('biodata', function () {
+    $nama = "Kidam Kusnandi";
+    $umur = 22;
+    $alamat = "Citamiang Kidul";
+    $sekolah = "SMK Assalaam Bandung";
+    $kelas = "XII RPL 2";
+    $hobi = "Bulutangkis";
+    return view('biodata', compact('nama','umur','alamat','sekolah','kelas','hobi'));
+});
 
+Route::get('blog', function () {
+    $posts = [
+        ['id' => 1, 'title' => "Lorem ipsum 1",'content' => 'Content Pertama'],
+        ['id' => 2, 'title' => "Lorem ipsum 2",'content' => 'Content Kedua'],
+        ['id' => 3, 'title' => "Lorem ipsum 3",'content' => 'Content Ketiga'],
+    ];
+    return view('blog', compact('posts'));
+});
+
+Route::get('data', function () {
+    $posts = [
+        [
+            'id' => 1, 'name' => 'Ujang Ubed', 'username' => 'ujang ubed','email' => 'ujangubed@gmail.com',
+            'alamat' => 'Bandung', 'mapel' => [
+                ['mapell' => 'Matematika'],
+                ['mapell' => 'Fisika'],
+                ['mapell' => 'Kimia']
+            ]
+        ],
+        [
+            'id' => 2, 'name' => 'Kidam Kusnandi', 'username' => 'kidamZ','email' => 'kidamkusnandi@gmail.com',
+            'alamat' => 'Bandung', 'mapel' => [
+                ['mapell' => 'Bahasa Indonesia'],
+                ['mapell' => 'Fisika'],
+                ['mapell' => 'Bahasa Inggris']
+            ]
+        ],
+        [
+            'id' => 3, 'name' => 'Akbar Ginanjar', 'username' => 'akbarginanjarr','email' => 'akbarbabang@gmail.com',
+            'alamat' => 'Bandung', 'mapel' => [
+                ['mapell' => 'Bahasa Indonesia'],
+                ['mapell' => 'Bahasa Inggris'],
+                ['mapell' => 'Kimia']
+            ]
+        ],
+        [
+            'id' => 4, 'name' => 'Priyadi Sentosa', 'username' => 'priyadisentosa','email' => 'priyadi@gmail.com',
+            'alamat' => 'Bandung', 'mapel' => [
+                ['mapell' => 'Matematika'],
+                ['mapell' => 'Bahasa Inggris'],
+                ['mapell' => 'Bahasa Indonesia']
+            ]
+        ],
+        [
+            'id' => 5, 'name' => 'Aldi Awaludin', 'username' => 'aldi abo','email' => 'aldiawaludin@gmail.com',
+            'alamat' => 'Bandung', 'mapel' => [
+                ['mapell' => 'Matematika'],
+                ['mapell' => 'Fisika'],
+                ['mapell' => 'Bahasa Inggris']
+            ]
+        ],
+    ];
+    return view('data', compact('posts'));
+});
