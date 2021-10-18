@@ -1,9 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Models\Biodata;
 use Nette\Iterators\Mapper;
 use PhpParser\Node\Stmt\If_;
+use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -102,43 +106,53 @@ Route::get('data', function () {
         [
             'id' => 1, 'name' => 'Ujang Ubed', 'username' => 'ujang ubed','email' => 'ujangubed@gmail.com',
             'alamat' => 'Bandung', 'mapel' => [
-                ['mapell' => 'Matematika'],
-                ['mapell' => 'Fisika'],
-                ['mapell' => 'Kimia']
+                'mapel1' => 'Matematika',
+                'mapel2' => 'Fisika',
+                'mapel3' => 'Kimia'
             ]
         ],
         [
             'id' => 2, 'name' => 'Kidam Kusnandi', 'username' => 'kidamZ','email' => 'kidamkusnandi@gmail.com',
             'alamat' => 'Bandung', 'mapel' => [
-                ['mapell' => 'Bahasa Indonesia'],
-                ['mapell' => 'Fisika'],
-                ['mapell' => 'Bahasa Inggris']
+                'mapel1' => 'Bahasa Indonesia',
+                'mapel2' => 'Fisika',
+                'mapel3' => 'Bahasa Inggris'
             ]
         ],
         [
             'id' => 3, 'name' => 'Akbar Ginanjar', 'username' => 'akbarginanjarr','email' => 'akbarbabang@gmail.com',
             'alamat' => 'Bandung', 'mapel' => [
-                ['mapell' => 'Bahasa Indonesia'],
-                ['mapell' => 'Bahasa Inggris'],
-                ['mapell' => 'Kimia']
+                'mapel1' => 'Bahasa Indonesia',
+                'mapel2' => 'Bahasa Inggris',
+                'mapel3' => 'Kimia'
             ]
         ],
         [
             'id' => 4, 'name' => 'Priyadi Sentosa', 'username' => 'priyadisentosa','email' => 'priyadi@gmail.com',
             'alamat' => 'Bandung', 'mapel' => [
-                ['mapell' => 'Matematika'],
-                ['mapell' => 'Bahasa Inggris'],
-                ['mapell' => 'Bahasa Indonesia']
+                'mapel1' => 'Matematika',
+                'mapel2' => 'Bahasa Inggris',
+                'mapel3' => 'Bahasa Indonesia'
             ]
         ],
         [
             'id' => 5, 'name' => 'Aldi Awaludin', 'username' => 'aldi abo','email' => 'aldiawaludin@gmail.com',
             'alamat' => 'Bandung', 'mapel' => [
-                ['mapell' => 'Matematika'],
-                ['mapell' => 'Fisika'],
-                ['mapell' => 'Bahasa Inggris']
+                'mapel1' => 'Matematika',
+                'mapel2' => 'Fisika',
+                'mapel3' => 'Bahasa Inggris'
             ]
         ],
     ];
     return view('data', compact('posts'));
+});
+
+Route::get('/test-post', function () {
+    $query = App\Models\Post::all();
+    return view('test-posts', compact('query'));
+});
+
+Route::get('/biodata', function () {
+    $query = App\Models\Biodata::all();
+    return view('biodatas', compact('query'));
 });

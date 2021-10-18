@@ -13,7 +13,7 @@
             Alamat : {{ $data['alamat'] }} <br>
             Mata Pelajaran  :
             @foreach($data['mapel'] as $data2)
-            <ul><li>{{ $data2['mapell'] }}</li></ul>
+            <ul><li>{{ $data2 }}</li></ul>
             @endforeach
         </ul>
         <hr>
