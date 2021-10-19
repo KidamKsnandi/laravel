@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Pembelian extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['title', 'content'];
+    public $table = "pembelian";
+    protected $fillable = ['nama_barang', 'nama_suplier', 'qty', 'tgl'];
 }

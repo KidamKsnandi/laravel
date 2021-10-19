@@ -4,19 +4,12 @@
       <title>Document</title>
    </head>
    <body>
-       <center><h1>Data Post</h1>
-      <table border=1>
-         <tr>
-            <th>Judul</th>
-            <th>Isi</th>
-          </tr>
-          @foreach($query as $item)
-            <tr>
-                <td>{{ $item->title }}</td>
-                <td>{{ $item->content }}</td>
-            </tr>
+       <center><h1>Data Post</h1></center>
+          @foreach($data as $item)
+            <h2>{{ $item->title }}</h2>
+            <p>{{ $item->content }}</p>
+            <hr>
           @endforeach
-      </table>
-    </center>
+
    </body>
 </html>

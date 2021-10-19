@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Post;
+use App\Models\Barang;
+use App\Models\Pembeli;
+use App\Models\Pesanan;
+use App\Models\Suplier;
+use App\Models\Pembelian;
+use Illuminate\Routing\Controller;
 
 
 class PostController extends Controller
 {
     public function index() {
-        $posts = DB::table('posts')->get();
-        return view('posts',['posts' => $posts]);
+        $data = Post::all();
+        return view('test-posts', compact('data'));
     }
+
 }

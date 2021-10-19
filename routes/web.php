@@ -5,7 +5,10 @@ use App\Models\Biodata;
 use Nette\Iterators\Mapper;
 use PhpParser\Node\Stmt\If_;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\BarangController;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
+
 
 
 
@@ -152,7 +155,19 @@ Route::get('/test-post', function () {
     return view('test-posts', compact('query'));
 });
 
-Route::get('/biodata', function () {
+Route::get('/biodatas', function () {
     $query = App\Models\Biodata::all();
     return view('biodatas', compact('query'));
 });
+
+Route::get('/postcontrol', [PostController::class, 'index'] );
+
+Route::get('/barang', [BarangController::class, 'barang'] );
+
+Route::get('/pembeli', [BarangController::class, 'pembeli'] );
+
+Route::get('/suplier', [BarangController::class, 'suplier'] );
+
+Route::get('/pesanan', [BarangController::class, 'pesanan'] );
+
+Route::get('/pembelian', [BarangController::class, 'pembelian'] );

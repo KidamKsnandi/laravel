@@ -13,23 +13,23 @@ class BiodatasTableSeeder extends Seeder
         $biodatas = [
             [
                 'name' => 'Kidam Kusnandi', 'bornDate' => '2004-06-06', 'gender' => 'Laki-Laki',
-                'address' => 'Citamiang Kidul', 'religion' => 'Islam', 'age' => 17
+                'address' => 'Citamiang Kidul', 'religion' => 'Islam', 'age' => 17, 'hobby' => 'Ngoding'
             ],
             [
                 'name' => 'Akbar Ginanjar', 'bornDate' => '2004-02-17', 'gender' => 'Laki-Laki',
-                'address' => 'Cibiuk', 'religion' => 'Islam', 'age' => 17
+                'address' => 'Cibiuk', 'religion' => 'Islam', 'age' => 17, 'hobby' => 'Ngoding'
             ],
             [
                 'name' => 'Aldi Awaludin', 'bornDate' => '2003-12-21', 'gender' => 'Laki-Laki',
-                'address' => 'Babakan Nugraha', 'religion' => 'Islam', 'age' => 17
+                'address' => 'Babakan Nugraha', 'religion' => 'Islam', 'age' => 17, 'hobby' => 'Ngoding'
             ],
             [
                 'name' => 'Muhammad Hasanudin Ali', 'bornDate' => '2004-04-24', 'gender' => 'Laki-Laki',
-                'address' => 'Batuwangi', 'religion' => 'Islam', 'age' => 17
+                'address' => 'Batuwangi', 'religion' => 'Islam', 'age' => 17, 'hobby' => 'Ngoding'
             ],
             [
                 'name' => 'Firman Romansyah', 'bornDate' => '2004-08-17', 'gender' => 'Laki-Laki',
-                'address' => 'Babakan', 'religion' => 'Islam', 'age' => 17
+                'address' => 'Babakan', 'religion' => 'Islam', 'age' => 17, 'hobby' => 'Ngoding'
             ]
         ];
 

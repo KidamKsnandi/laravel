@@ -16,6 +16,7 @@ class CreateBiodatasTable extends Migration
             $tabel->text('address');
             $tabel->string('religion');
             $tabel->integer('age');
+            $tabel->string('hobby');
             $tabel->timestamps();
         });
     }
